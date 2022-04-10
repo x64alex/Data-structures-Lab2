@@ -23,7 +23,6 @@ struct Node {
 class PriorityQueue {
 private:
     Node * head;
-    Node *current;
     Relation relation;
 
 public:

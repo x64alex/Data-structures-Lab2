@@ -4,7 +4,7 @@
 using namespace std;
 
 
-PriorityQueue::PriorityQueue(Relation r):head{NULL},current{NULL}, relation{r}
+PriorityQueue::PriorityQueue(Relation r):head{NULL}, relation{r}
 {}
 
 
@@ -25,7 +25,7 @@ void PriorityQueue::push(TElem e, TPriority p) {
             newNode->next = head;
             this->head = newNode;
         } else {
-            Node* iteratorNode = new Node();
+            Node* iteratorNode;
             iteratorNode = this->head;
 
             while (iteratorNode->next != NULL &&
@@ -45,16 +45,25 @@ void PriorityQueue::push(TElem e, TPriority p) {
 Element PriorityQueue::top() const {
     if(this->isEmpty())
     {
-        throw "Empty list";
+        throw exception_ptr();
     }
 
     return this->head->data;
 }
 
 Element PriorityQueue::pop() {
-    Node* first = this->head;
+    if(this->isEmpty())
+    {
+        throw exception_ptr();
+    }
+
+    Element e;
+    Node* p = this->head;
+    e.first = this->head->data.first;
+    e.second = this->head->data.second;
     this->head = this->head->next;
-    return first->data;
+    free(p);
+    return e;
 }
 
 bool PriorityQueue::isEmpty() const {
@@ -63,6 +72,10 @@ bool PriorityQueue::isEmpty() const {
 
 
 PriorityQueue::~PriorityQueue() {
-	//TODO - Implementation
+	while(!isEmpty()){
+        Node* p = this->head;
+        this->head = this->head->next;
+        free(p);
+    }
 };
 

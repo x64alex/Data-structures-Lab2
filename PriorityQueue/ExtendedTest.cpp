@@ -51,14 +51,14 @@ void testCreate() {
 		pq.top(); //if it is empty it should throw an exception
 		assert(false); //if it did not throw an exception the assert will fail
 	}
-	catch (exception const) {
+	catch (exception_ptr& e) {
 		assert(true);
 	}
 	try {
 		pq.pop(); //if it is empty it should throw an exception
 		assert(false); //if it did not throw an exception the assert will fail
 	}
-	catch (exception& e) {
+	catch (exception_ptr& e) {
 		assert(true);
 	}
 }
