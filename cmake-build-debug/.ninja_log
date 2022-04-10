@@ -1,0 +1,6 @@
+# ninja log v5
+1	248	1649506587648444689	CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/PriorityQueue.cpp.o	b94671428e544c44
+1	257	1649506587659415932	CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ShortTest.cpp.o	d9f234eb9aba2f5a
+1	384	1649506587784061801	CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/App.cpp.o	56420d8a35ffb0ac
+1	407	1649506587806137658	CMakeFiles/Data_structures_Lab2.dir/PriorityQueue/ExtendedTest.cpp.o	79260f7790edc1b9
+407	456	1649506587860098684	Data_structures_Lab2	ee9727454c577a69
