@@ -13,15 +13,18 @@ typedef int TPriority;
 typedef std::pair<TElem, TPriority> Element;
 typedef bool (*Relation)(TPriority p1, TPriority p2);
 #define NULL_TELEM pair<TElem, TPriority> (-11111,-11111);
+
 struct Node {
-    int data;
+    Element data;
     struct Node* next;
 };
 
 
 class PriorityQueue {
 private:
-
+    Node * head;
+    Node *current;
+    Relation relation;
 
 public:
 	//implicit constructor
